@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Grade Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="tracker">
+      <div class="tracker__header">
+        <div>
+          <p class="eyebrow">Assessment 3</p>
+          <h1>Student Grade Tracker</h1>
+        </div>
+        <div class="average-panel" aria-live="polite">
+          <span>Average Grade</span>
+          <strong id="averageGrade">0.00</strong>
+        </div>
+      </div>
+
+      <form id="studentForm" class="student-form" novalidate>
+        <div class="field">
+          <label for="studentName">Student Name</label>
+          <input id="studentName" name="studentName" type="text" placeholder="Enter name" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="studentGrade">Grade</label>
+          <input id="studentGrade" name="studentGrade" type="text" inputmode="decimal" placeholder="0 - 100">
+        </div>
+        <button type="submit" class="primary-button">Add Student</button>
+      </form>
+
+      <p id="formError" class="error-message" role="alert"></p>
+
+      <section class="student-section" aria-labelledby="studentListTitle">
+        <div class="student-section__heading">
+          <h2 id="studentListTitle">Students</h2>
+          <span id="studentCount">0 students</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Grade</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody id="studentTableBody"></tbody>
+          </table>
+        </div>
+
+        <p id="emptyState" class="empty-state">No students added yet.</p>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
